@@ -7,36 +7,53 @@ const closeProfileModal = document.querySelector('.btn-close-profile');
 
 // ---------------------------------------------------------------
 
-let coll = document.getElementById('snapshot-collection-1');
+
 let collectionPage = document.getElementById('collection-page');
-let totalImg = 25;
+let totalImg = 22;
 // Article iteration
-for (let index = 2; index < totalImg; index++) {
-   const articleLoop = coll.cloneNode(true);
 
-   collectionPage.appendChild(articleLoop);
-   document.getElementById('img-src').src = 'https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + index + '.jpeg';
-   document.getElementById('img-src').srcset = 'https://ik.imagekit.io/maulanafatullah/tr:w-400/pic-' + index + '.jpeg 400w, https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + index + '.jpeg 800w, https://ik.imagekit.io/maulanafatullah/tr:w-1200/pic-' + index + '.jpeg 1200w';
-}
 // Dialog iteration
-for (let modalNumber = 2; modalNumber < totalImg; modalNumber++) {
+for (let modalNumber = 1; modalNumber < totalImg; modalNumber++) {
 
-   const dialogImg = document.getElementById('img-modal-1');
-   const dialogImgSrc = dialogImg.cloneNode(true);
+   const article = document.createElement('article');
+   article.id = 'snapshot-collection-' + modalNumber;
+   article.classList.add('img-collection', 'btn-img-modal');
+   const img = document.createElement('img');
+   img.id = 'img-src';
+   img.src = 'https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + modalNumber + '.jpeg';
+   img.srcset = 'https://ik.imagekit.io/maulanafatullah/tr:w-400/pic-' + modalNumber + '.jpeg 400w, https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + modalNumber + '.jpeg 800w, https://ik.imagekit.io/maulanafatullah/tr:w-1200/pic-' + modalNumber + '.jpeg 1200w';
+   img.loading = true;
+   article.appendChild(img);
+   document.getElementById('collection-page').appendChild(article);
 
-   document.getElementById('collection-page').appendChild(dialogImgSrc);
-   document.getElementById('img-dialog-src-1').id = 'img-dialog-src-' + modalNumber;
-   document.getElementById('img-dialog-src-1').src = 'https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + modalNumber + '.jpeg';
-   document.getElementById('img-dialog-src-1').srcset = 'https://ik.imagekit.io/maulanafatullah/tr:w-400/pic-' + modalNumber + '.jpeg 400w, https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + modalNumber + '.jpeg 800w, https://ik.imagekit.io/maulanafatullah/tr:w-1200/pic-' + modalNumber + '.jpeg 1200w';
 
-   document.getElementById('img-modal-1').id = 'img-modal-' + modalNumber;
-   document.getElementById('snapshot-collection-1').id = 'snapshot-collection-' + modalNumber;
-   document.getElementById('btn-close-img-1').id = 'btn-close-img-' + modalNumber;
+   const dialog = document.createElement('dialog');
+   dialog.id = 'img-modal-' + modalNumber;
+   dialog.classList.add('img-modal');
 
-   var closeImageModal = document.getElementById('btn-close-img-' + (modalNumber - 1));
-   var snapModal = document.getElementById('snapshot-collection-' + modalNumber);
+   const imgModal = document.createElement('img');
+   imgModal.id = 'img-modal-src-' + modalNumber;
+   imgModal.src = 'https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + modalNumber + '.jpeg';
+   imgModal.srcset = 'https://ik.imagekit.io/maulanafatullah/tr:w-400/pic-' + modalNumber + '.jpeg 400w, https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + modalNumber + '.jpeg 800w, https://ik.imagekit.io/maulanafatullah/tr:w-1200/pic-' + modalNumber + '.jpeg 1200w';
 
-   let imageModal = document.querySelector('#img-modal-' + (modalNumber - 1));
+   const btnClose = document.createElement('div');
+   btnClose.id = 'btn-close-img-' + modalNumber;
+   btnClose.classList.add('btn-close-img');
+   const spanClose = document.createElement('span');
+   spanClose.appendChild(document.createTextNode('Close'));
+   btnClose.appendChild(spanClose);
+
+   dialog.appendChild(imgModal);
+   dialog.appendChild(document.createElement('hr'));
+   dialog.appendChild(btnClose);
+   document.getElementById('collection-page').appendChild(dialog);
+
+
+
+   const closeImageModal = document.getElementById('btn-close-img-' + modalNumber);
+   const snapModal = document.getElementById('snapshot-collection-' + modalNumber);
+
+   const imageModal = document.querySelector('#img-modal-' + modalNumber);
    snapModal.addEventListener('click', function () {
       imageModal.showModal();
    });
@@ -50,6 +67,14 @@ for (let modalNumber = 2; modalNumber < totalImg; modalNumber++) {
       }, false);
    });
 }
+// for (let index = 1; index < totalImg; index++) {
+//    let coll = document.getElementById('snapshot-collection-1');
+//    const articleLoop = coll.cloneNode(true);
+
+//    collectionPage.appendChild(articleLoop);
+//    document.getElementById('img-src').src = 'https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + index + '.jpeg';
+//    document.getElementById('img-src').srcset = 'https://ik.imagekit.io/maulanafatullah/tr:w-400/pic-' + index + '.jpeg 400w, https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + index + '.jpeg 800w, https://ik.imagekit.io/maulanafatullah/tr:w-1200/pic-' + index + '.jpeg 1200w';
+// }
 
 navButton.addEventListener('click', function () {
    navButton.classList.toggle('active');
