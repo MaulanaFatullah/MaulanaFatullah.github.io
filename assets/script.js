@@ -67,14 +67,6 @@ for (let modalNumber = 1; modalNumber < totalImg; modalNumber++) {
       }, false);
    });
 }
-// for (let index = 1; index < totalImg; index++) {
-//    let coll = document.getElementById('snapshot-collection-1');
-//    const articleLoop = coll.cloneNode(true);
-
-//    collectionPage.appendChild(articleLoop);
-//    document.getElementById('img-src').src = 'https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + index + '.jpeg';
-//    document.getElementById('img-src').srcset = 'https://ik.imagekit.io/maulanafatullah/tr:w-400/pic-' + index + '.jpeg 400w, https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + index + '.jpeg 800w, https://ik.imagekit.io/maulanafatullah/tr:w-1200/pic-' + index + '.jpeg 1200w';
-// }
 
 navButton.addEventListener('click', function () {
    navButton.classList.toggle('active');
