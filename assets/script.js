@@ -15,7 +15,8 @@ for (let index = 2; index < totalImg; index++) {
    const articleLoop = coll.cloneNode(true);
 
    collectionPage.appendChild(articleLoop);
-   document.getElementById('img-src').src = 'assets/images/pic-' + index + '.jpeg';
+   document.getElementById('img-src').src = 'https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + index + '.jpeg';
+   document.getElementById('img-src').srcset = 'https://ik.imagekit.io/maulanafatullah/tr:w-400/pic-' + index + '.jpeg 400w, https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + index + '.jpeg 800w, https://ik.imagekit.io/maulanafatullah/tr:w-1200/pic-' + index + '.jpeg 1200w';
 }
 // Dialog iteration
 for (let modalNumber = 2; modalNumber < totalImg; modalNumber++) {
@@ -25,7 +26,8 @@ for (let modalNumber = 2; modalNumber < totalImg; modalNumber++) {
 
    document.getElementById('collection-page').appendChild(dialogImgSrc);
    document.getElementById('img-dialog-src-1').id = 'img-dialog-src-' + modalNumber;
-   document.getElementById('img-dialog-src-1').src = 'assets/images/pic-' + modalNumber + '.jpeg';
+   document.getElementById('img-dialog-src-1').src = 'https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + modalNumber + '.jpeg';
+   document.getElementById('img-dialog-src-1').srcset = 'https://ik.imagekit.io/maulanafatullah/tr:w-400/pic-' + modalNumber + '.jpeg 400w, https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-' + modalNumber + '.jpeg 800w, https://ik.imagekit.io/maulanafatullah/tr:w-1200/pic-' + modalNumber + '.jpeg 1200w';
 
    document.getElementById('img-modal-1').id = 'img-modal-' + modalNumber;
    document.getElementById('snapshot-collection-1').id = 'snapshot-collection-' + modalNumber;

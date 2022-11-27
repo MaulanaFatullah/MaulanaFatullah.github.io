@@ -644,22 +644,22 @@ input#email:focus {
 }
 
 .slide:nth-child(1) {
-  background-image: url("../assets/images/pic-1.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-1.jpeg");
 }
 .slide:nth-child(2) {
-  background-image: url("../assets/images/pic-2.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-2.jpeg");
 }
 
 .slide:nth-child(3) {
-  background-image: url("../assets/images/pic-3.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-3.jpeg");
 }
 
 .slide:nth-child(4) {
-  background-image: url("../assets/images/pic-4.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-4.jpeg");
 }
 
 .slide:nth-child(5) {
-  background-image: url("../assets/images/pic-5.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-5.jpeg");
 }
 
 #slideshow-two {
@@ -667,22 +667,22 @@ input#email:focus {
 }
 
 .slide-two:nth-child(1) {
-  background-image: url("../assets/images/pic-2.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-1.jpeg");
 }
 .slide-two:nth-child(2) {
-  background-image: url("../assets/images/pic-3.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-2.jpeg");
 }
 
 .slide-two:nth-child(3) {
-  background-image: url("../assets/images/pic-4.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-3.jpeg");
 }
 
 .slide-two:nth-child(4) {
-  background-image: url("../assets/images/pic-5.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-4.jpeg");
 }
 
 .slide-two:nth-child(5) {
-  background-image: url("../assets/images/pic-6.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-5.jpeg");
 }
 
 @keyframes slide {
@@ -852,8 +852,14 @@ footer {
 }
 /* Screen below 780px */
 @media screen and (max-width: 780px) {
+  
+  #collection {
+    margin-left: 2em;
+    margin-right: clamp(2em, 10vw + 3em, 4em);
+  }
   .collection-page {
-    column-gap: 0px;
+    column-gap: 40px;
+    width: 100%;
   }
   .collection-page .img-collection {
     width: 100%;
@@ -879,6 +885,54 @@ footer {
     width: 90%;
   }
 }
+/* Max Height */
+@media screen and (max-height: 700px) {
+  @-webkit-keyframes introduction-text {
+    from {
+      transform: translateX(-15em);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .introduction-text {
+    -webkit-animation: introduction-text var(--transition-1s) ease-in-out normal;
+    animation: introduction-text var(--transition-1s) ease-in-out normal;
+    transform: translateX(0);
+  }
+  .btn-profile-box {
+    top: 30vh;
+  }
+
+  .btn-close-img > span::after {
+    bottom: 25px;
+    left: 33%;
+  }
+  .btn-close-img > span::before {
+    bottom: 25px;
+    right: 33%;
+  }
+  .introduction-text {
+    top: 15em;
+  }
+  #contact > .about-me {
+    padding: 100px 30vw 0;
+  }
+  #contact > .about-me::after {
+    height: 30vh;
+  }
+  .soc-med a {
+    padding: 0 20px;
+  }
+  .soc-med {
+    padding-top: 0;
+    margin-top: 9em;
+    width: 50%;
+  }
+}
+
 /* PC Screen */
 @media screen and (min-width: 1250px) {
   .introduction-bg {
@@ -1011,51 +1065,5 @@ footer {
     -webkit-animation: introduction-text var(--transition-1s) ease-in-out normal;
     animation: introduction-text var(--transition-1s) ease-in-out normal;
     transform: translateX(0);
-  }
-}
-@media screen and (max-height: 700px) {
-  @-webkit-keyframes introduction-text {
-    from {
-      transform: translateX(-15em);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  .introduction-text {
-    -webkit-animation: introduction-text var(--transition-1s) ease-in-out normal;
-    animation: introduction-text var(--transition-1s) ease-in-out normal;
-    transform: translateX(0);
-  }
-  .btn-profile-box {
-    top: 30vh;
-  }
-
-  .btn-close-img > span::after {
-    bottom: 25px;
-    left: 33%;
-  }
-  .btn-close-img > span::before {
-    bottom: 25px;
-    right: 33%;
-  }
-  .introduction-text {
-    top: 15em;
-  }
-  #contact > .about-me {
-    padding: 100px 30vw 0;
-  }
-  #contact > .about-me::after {
-    height: 30vh;
-  }
-  .soc-med a {
-    padding: 0 20px;
-  }
-  .soc-med {
-    padding-top: 0;
-    margin-top: 9em;
-    width: 50%;
   }
 }
