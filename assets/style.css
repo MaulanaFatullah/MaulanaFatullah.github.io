@@ -530,7 +530,7 @@ div#contact {
 }
 .soc-med a {
   transition: 0.5s;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 /* End of Contact */
 
@@ -729,7 +729,7 @@ footer {
     padding: 100px 20vw;
   }
   .soc-med {
-    width: 40%;
+    width: 60%;
   }
 }
 @media screen and (max-width: 1400px) {
@@ -747,7 +747,7 @@ footer {
     padding: 100px 10vw;
   }
   .soc-med {
-    width: 50%;
+    width: 70%;
   }
 }
 @media screen and (max-width: 1317px) {
@@ -852,7 +852,6 @@ footer {
 }
 /* Screen below 780px */
 @media screen and (max-width: 780px) {
-  
   #collection {
     margin-left: 2em;
     margin-right: clamp(2em, 10vw + 3em, 4em);
@@ -877,12 +876,40 @@ footer {
   #contact > .about-me {
     padding: 100px 20px 0;
   }
-  .soc-med a {
-    padding: 0 10px;
+  
+  .soc-med :nth-child(1) {
+    grid-area: contact;
   }
+  .soc-med :nth-child(2) {
+    grid-area: instagram;
+  }
+  .soc-med :nth-child(3) {
+    grid-area: facebook;
+  }
+  .soc-med :nth-child(4) {
+    grid-area: spotify;
+  }
+  .soc-med :nth-child(5) {
+    grid-area: linkedin;
+  }
+  .soc-med :nth-child(6) {
+    grid-area: github;
+  }
+  .soc-med :nth-child(7) {
+    grid-area: whatsapp;
+  }
+
   .soc-med {
-    padding-top: 2em;
-    width: 90%;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "contact contact contact"
+      "instagram facebook spotify"
+      "linkedin github whatsapp";
+    padding-top: 0;
+    margin-top: 9em;
+    width: 95%;
   }
 }
 /* Max Height */
@@ -923,16 +950,77 @@ footer {
   #contact > .about-me::after {
     height: 30vh;
   }
-  .soc-med a {
-    padding: 0 20px;
-  }
-  .soc-med {
-    padding-top: 0;
-    margin-top: 9em;
-    width: 50%;
-  }
 }
 
+@media screen and (max-width: 425px) {
+  #contact > .about-me::after {
+    height: 30vh;
+  }
+  #contact > .about-me {
+    padding: 0 20px;
+    padding-top: 3.5em;
+  }
+  .soc-med :nth-child(1) {
+    grid-area: contact;
+  }
+  .soc-med :nth-child(2) {
+    grid-area: instagram;
+  }
+  .soc-med :nth-child(3) {
+    grid-area: facebook;
+  }
+  .soc-med :nth-child(4) {
+    grid-area: spotify;
+  }
+  .soc-med :nth-child(5) {
+    grid-area: linkedin;
+  }
+  .soc-med :nth-child(6) {
+    grid-area: github;
+  }
+  .soc-med :nth-child(7) {
+    grid-area: whatsapp;
+  }
+
+  .soc-med {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "contact contact"
+      "instagram facebook"
+      "spotify linkedin"
+      "github whatsapp";
+    padding-top: 0;
+    margin-top: 9em;
+    width: 95%;
+  }
+  .introduction-text {
+    top: 20em;
+  }
+}
+@media screen and (max-width: 321px) {
+  .introduction-text {
+    top: 20em;
+  }
+  @-webkit-keyframes introduction-text {
+    from {
+      transform: translateX(-15em);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .introduction-text {
+    position: relative;
+    top: var(--intro-text-top);
+    -webkit-animation: introduction-text var(--transition-1s) ease-in-out normal;
+    animation: introduction-text var(--transition-1s) ease-in-out normal;
+    transform: translateX(0);
+  }
+}
 /* PC Screen */
 @media screen and (min-width: 1250px) {
   .introduction-bg {
@@ -1015,55 +1103,5 @@ footer {
   .introduction-text p {
     font-size: 1.2em;
   }
-}
-@media screen and (max-width: 425px) {
-  #contact > .about-me::after {
-    height: 30vh;
-  }
-  #contact > .about-me {
-    padding: 0 20px;
-    padding-top: 3.5em;
-  }
-  .soc-med a {
-    padding: 0 7px;
-  }
-  .soc-med {
-    padding-top: 0;
-    margin-top: 9em;
-    width: 95%;
-  }
-  .introduction-text {
-    top: 20em;
-  }
-}
-@media screen and (max-width: 321px) {
-  .soc-med a {
-    display: grid;
-    float: left;
-    width: 40%;
-    padding: 5px 10px;
-  }
-  .soc-med {
-    width: 75%;
-  }
-  .introduction-text {
-    top: 20em;
-  }
-  @-webkit-keyframes introduction-text {
-    from {
-      transform: translateX(-15em);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  .introduction-text {
-    position: relative;
-    top: var(--intro-text-top);
-    -webkit-animation: introduction-text var(--transition-1s) ease-in-out normal;
-    animation: introduction-text var(--transition-1s) ease-in-out normal;
-    transform: translateX(0);
-  }
+  
 }
