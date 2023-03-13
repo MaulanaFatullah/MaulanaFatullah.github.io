@@ -118,15 +118,25 @@ ul {
   margin: 0 -20px;
 }
 
-ul .nav-list {
+ul .nav-list a{
   color: var(--accent-color);
   margin: 0 0.5em;
-  transition: var(--transition-04s);
   padding: 7px 13px;
   border-top-left-radius: 20px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 20px;
+  transition: var(--transition-04s);
+}
+.nav-list a[href="#order"],
+.btn-new-website{
+  color: var(--accent-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  background-color: var(--base-white);
+  padding: 7px 13px;
+  border-radius: 10px;
   transition: var(--transition-04s);
 }
 .nav-list a {
@@ -137,7 +147,8 @@ ul .nav-list {
   color: var(--base-white);
   transition: var(--transition-04s);
 }
-.nav-list:hover {
+.nav-list a:hover,
+.btn-new-website:hover {
   background-color: var(--nav-accent-blur-color);
   color: var(--base-white);
   transition: var(--transition-04s);
@@ -271,6 +282,7 @@ ul .nav-list {
   border-bottom: 1px solid var(--accent-color);
 }
 .modal-profile {
+  position: relative;
   color: inherit;
   border-radius: 20px;
   border-color: var(--nav-accent-color);
@@ -295,22 +307,25 @@ ul .nav-list {
 }
 .btn-close-profile:hover {
   transition: var(--transition-04s);
-  border-color: white;
+  color: white;
+  background-color: var(--accent-color);
+
 }
 .btn-close-profile {
-  aspect-ratio: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
   transition: var(--transition-04s);
-
-  border: 3px solid var(--accent-color);
-  background-color: transparent;
-  border-radius: 100px;
+  border: none;
+  background-color: var(--base-white);
+  border-bottom-left-radius: 10px;
   cursor: pointer;
-  color: inherit;
+  color: var(--accent-color);
   font-weight: 500;
   font-size: 1.3rem;
-  margin: 10px 0;
   outline: none;
   width: 40px;
+  height: 30px;
 }
 /* End of Profile */
 
@@ -534,9 +549,9 @@ div#contact {
 }
 /* End of Contact */
 
-/* Form Subscription */
+/* Form order */
 
-#subscription,
+#order,
 #contact,
 #about-me {
   display: grid;
@@ -547,17 +562,17 @@ div#contact {
   justify-content: center;
   padding: 2em 0;
 }
-#subscription {
+#order {
   overflow: hidden;
   display: block;
   height: 100vh;
   background: linear-gradient(var(--nav-color), var(--nav-accent-color));
 }
-.subscription-form {
+.order-section {
   clear: both;
   position: relative;
   margin: 0 auto;
-  width: 40vw;
+  width: 30vw;
   bottom: 10em;
   padding: 25px 30px;
   border-radius: 10px;
@@ -578,24 +593,26 @@ input#email:hover {
 input#email:focus {
   border-color: var(--accent-color);
 }
-.btn-email:hover {
+.btn-order:hover {
   cursor: pointer;
   color: var(--accent-color);
   border-color: var(--base-white);
   background-color: var(--base-white);
   transition: var(--transition-04s);
 }
-.btn-email {
+.btn-order {
+  display: inline-block;
   position: relative;
   right: 5px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  font-size: clamp(1rem, 1em, 1.5rem);
+  font-weight: bold;
+  border-radius: 10px;
   border-style: solid;
-  border-width: 2px;
   border-color: var(--accent-color);
   background-color: var(--accent-color);
   color: var(--base-white);
-  padding: 0.55em;
+  padding-inline: clamp(.5rem, calc(.5rem + 50%), 1rem);
+  padding-block: clamp(.25rem, calc(.25rem + 50%), .5rem);
   transition: var(--transition-04s);
 }
 /* Slideshow */
@@ -703,7 +720,7 @@ input#email:focus {
   }
 }
 /* End of Slideshow */
-/* End of Form Subscription */
+/* End of Form order */
 
 /* Footer */
 footer {
@@ -765,7 +782,7 @@ footer {
   .slide-wrapper {
     width: calc(var(--slide-width-13) * 5);
   }
-  .subscription-form {
+  .order-section {
     width: 60vw;
   }
 
@@ -828,7 +845,7 @@ footer {
   .slide-wrapper {
     width: calc(100vw * 5);
   }
-  .subscription-form {
+  .order-section {
     width: 90vw;
   }
 
